@@ -10,27 +10,9 @@
     <h1>Kurs JavaScript dla przyszłych świetnych programistów</h1>
 
     <script>
-        var a = "0"
-
-        function one() {
-            //var a = "1" //zmienna lokalna
-            console.log("zmienna w funkcji 1: " + a);
-
-            function two() {
-                //var a = "2"
-                console.log("zmienna w funkcji 2: " + a);
-
-                function three() {
-                    //var a = "3"
-                    console.log("zmienna w funkcji 3: " + a);
-                }
-                three()
-            }
-            two()
-        }
-        one()
-        console.log("zmienna o zasiegu globalnym: " + a);
-
+        console.log(a);            
+        var a = 10;
+        console.log(a); 
     </script>
 </body>
 
