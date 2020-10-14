@@ -1,4 +1,5 @@
 (function () {
+    let tooltip = null;
 
     function registerTooltipListener() {
         const title = document.querySelectorAll("[title]");
@@ -21,10 +22,12 @@
         div.textContent = text;
         div.className = "tooltip";
         document.body.appendChild(div);
+
+        tooltip = div;
     }
 
     function removeToolTip() {
-        console.log("Remove Tooltip");
+        tooltip.parentNode.removeChild(tooltip);
     }
 
     registerTooltipListener()
