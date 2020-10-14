@@ -12,16 +12,24 @@
 
     function showToolTip(e) {
         const title = e.target.getAttribute("title");
-        
-        createTooltip(title);
+
+        createTooltip(title, {
+            w: e.target.offsetWidth,
+            x: e.target.offsetLeft,
+            y: e.target.offsetTop
+        });
     }
 
-    function createTooltip(text) {
+    function createTooltip(text, options) {
         const div = document.createElement("div")
 
         div.textContent = text;
         div.className = "tooltip";
         document.body.appendChild(div);
+
+        div.style.top = options.y + "px";
+        div.style.left = options.x + "px";
+
 
         tooltip = div;
     }
