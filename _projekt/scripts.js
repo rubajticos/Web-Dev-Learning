@@ -27,9 +27,8 @@
         div.className = "tooltip";
         document.body.appendChild(div);
 
-        div.style.top = options.y + "px";
-        div.style.left = options.x + "px";
-
+        div.style.left = (options.x + options.w / 2 - div.offsetWidth / 2) + "px";
+        div.style.top = options.y + - div.offsetHeight + "px";
 
         tooltip = div;
     }
