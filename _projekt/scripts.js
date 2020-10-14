@@ -1,5 +1,7 @@
 (function () {
     let tooltip = null;
+    let mouseCoordinateX = null;
+    let mouseCoordinateY = null;
 
     function registerTooltipListener() {
         const title = document.querySelectorAll("[title]");
@@ -40,6 +42,20 @@
         tooltip.parentNode.removeChild(tooltip);
     }
 
+    function registerMouseTracking() {
+        mouseCoordinateX = document.getElementById("mouseX");
+        mouseCoordinateY = document.getElementById("mouseY");
+
+        document.onmousemove = trackMouse;            
+    }
+
+    function trackMouse(e) {
+        mouseCoordinateX.textContent = e.clientX;
+        mouseCoordinateY.textContent = e.clientY;
+    }
+
     registerTooltipListener()
+    registerMouseTracking()
+
 
 })();
