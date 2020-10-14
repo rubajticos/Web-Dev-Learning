@@ -13,6 +13,8 @@
     function showToolTip(e) {
         const title = e.target.getAttribute("title");
 
+        e.target.removeAttribute("title");
+
         createTooltip(title, {
             w: e.target.offsetWidth,
             x: e.target.offsetLeft,
@@ -33,7 +35,8 @@
         tooltip = div;
     }
 
-    function removeToolTip() {
+    function removeToolTip(e) {
+        e.target.setAttribute("title", tooltip.textContent)
         tooltip.parentNode.removeChild(tooltip);
     }
 
