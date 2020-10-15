@@ -13,6 +13,7 @@ body {
 .rectangle {
     width: 960px;
     margin: 20px;
+    text-align: center;
 }
 
 .square {
@@ -29,16 +30,14 @@ body {
     font-family: 'Josefin Sans', sans-serif;
     font-size: 70px;
     width: 600px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    text-align: left;
 }
 
 #zegar {
     float: left;
     font-family: 'Josefin Sans', sans-serif;
     font-size: 70px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    text-align: left;
 }
 
 .tile1 {
@@ -70,4 +69,43 @@ body {
     width: 480px;
     height: 142px;
     background-color: #ee5a32;
+}
+
+.tile5 {
+    margin: 10px;
+    width: 480px;
+    height: 304px;
+    background-color: #666666;
+}
+
+.youtube {
+    float: left;
+    margin: 10px;
+    width: 105px;
+    height: 142px;
+    background-color: #d94348;
+}
+
+.facebook {
+    float: left;
+    margin: 10px;
+    width: 105px;
+    height: 142px;
+    background-color: #4668b3;
+}
+
+.gplus {
+    float: left;
+    margin: 10px;
+    width: 105px;
+    height: 142px;
+    background-color: #d95333;
+}
+
+.twitter {
+    float: left;
+    margin: 10px;
+    width: 105px;
+    height: 142px;
+    background-color: #3095d3;
 }
