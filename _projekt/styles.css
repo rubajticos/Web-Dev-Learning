@@ -3,6 +3,12 @@
     margin: 0 auto;
 }
 
+#logo {
+    background-color: black;
+    color: #ffffff;
+    text-align: center;
+}
+
 .tooltip {
     position: absolute;
     color: aliceblue;
