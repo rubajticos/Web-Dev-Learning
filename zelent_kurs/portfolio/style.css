@@ -5,4 +5,19 @@ body {
 
 #container {
     width: 1000px;
+    margin: 0 auto;
+}
+
+.rectangle {
+    width: 960px;
+    margin: 20px;
+}
+
+.square {
+    float: left;
+    width: 50%;
+}
+
+.clear {
+    clear: both;
 }
