@@ -1,13 +1,41 @@
 #container {
-    width: 1366px;
+    width: 1000px;
     margin: 0 auto;
 }
 
 #logo {
-    background-color: black;
+    background-color: #000000;
     color: #ffffff;
     text-align: center;
     padding: 15px
+}
+
+#shopping-list {
+    float: left;
+    background-color: lightgray;
+    width: 120px;
+    min-height: 620px;
+    padding: 10px;
+}
+
+#content {
+    float: left;
+    padding: 20px;
+    width: 640px;
+}
+
+#ad {
+    float: left;
+    width: 160px;
+    min-height: 620px;
+    padding: 10px;
+    background-color: lightgray;
+}
+
+#footer {
+    clear: both;
+    background-color: #000000;
+    color: #ffffff;
 }
 
 .tooltip {
