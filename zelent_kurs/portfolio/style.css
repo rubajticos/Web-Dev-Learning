@@ -23,3 +23,16 @@ body {
 .clear {
     clear: both;
 }
+
+#logo {
+    float: left;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 70px;
+    width: 600px;
+}
+
+#zegar {
+    float: left;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 70px;
+}
