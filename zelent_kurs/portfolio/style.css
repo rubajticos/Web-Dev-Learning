@@ -106,12 +106,20 @@ body {
     background-color: #d94348;
 }
 
+.youtube:hover {
+    background-color: #c83237;
+}
+
 .facebook {
     float: left;
     margin: 10px;
     width: 105px;
     height: 142px;
     background-color: #4668b3;
+}
+
+.facebook:hover {
+    background-color: #3557a2;
 }
 
 .gplus {
@@ -122,10 +130,18 @@ body {
     background-color: #d95333;
 }
 
+.gplus:hover {
+    background-color: #c84222;
+}
+
 .twitter {
     float: left;
     margin: 10px;
     width: 105px;
     height: 142px;
     background-color: #3095d3;
+}
+
+.twitter:hover {
+    background-color: #2084c2;
 }
