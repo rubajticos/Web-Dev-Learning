@@ -49,6 +49,10 @@ body {
     text-align: center;
 }
 
+.tile1:hover {
+    background-color: #2084c2;
+}
+
 .tile2 {
     float: left;
     margin: 10px;
@@ -58,6 +62,10 @@ body {
     text-align: center;
 }
 
+.tile2:hover {
+    background-color: #555555;
+}
+
 .tile3 {
     float: left;
     margin: 10px;
@@ -65,6 +73,10 @@ body {
     height: 142px;
     background-color: #93c748;
     text-align: center;
+}
+
+.tile3:hover {
+    background-color: #82b637;
 }
 
 .tile4 {
