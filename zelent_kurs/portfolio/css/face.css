@@ -53,6 +53,8 @@
 
 .icon-user:before {
     content: '\e800';
+    font-size: 76px;
+    margin-top: 20px;
 }
 
 
@@ -60,6 +62,8 @@
 
 .icon-mail:before {
     content: '\e801';
+    font-size: 76px;
+    margin-top: 20px;
 }
 
 
@@ -83,6 +87,8 @@
 
 .icon-keyboard:before {
     content: '\f11c';
+    font-size: 76px;
+    margin-top: 20px;
 }
 
 
@@ -99,6 +105,8 @@
 
 .icon-graduation-cap:before {
     content: '\f19d';
+    font-size: 76px;
+    margin-top: 20px;
 }
 
 
