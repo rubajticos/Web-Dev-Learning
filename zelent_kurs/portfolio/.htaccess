@@ -1,0 +1,6 @@
+RewriteEngine on
+RewriteEngine zatrudnij-programiste-webowego index.html
+RewriteEngine kim-jestem kimjestem.html
+RewriteEngine oferta-tworzenie-stron-www oferta.html
+RewriteEngine cv-programista-php-javascript cv.html
+RewriteEngine kontakt-programista-php kontakt.html
