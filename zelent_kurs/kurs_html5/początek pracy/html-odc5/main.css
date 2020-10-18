@@ -1,8 +1,18 @@
-body
-{
-	margin: 0;
-	background-color: #2F3336;
-	color: #efefef;
+body {
+    margin: 0;
+    background-color: #2F3336;
+    color: #efefef;
     font-family: 'Open Sans', sans-serif;
     font-size: 17px;
+}
+
+h1.logo {
+    font-size: 44px;
+    font-weight: 700;
+    color: #ddd;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    margin-top: 50px;
+    margin-bottom: 10px;
 }
