@@ -217,3 +217,33 @@ h2 {
     text-align: center;
     padding: 20px;
 }
+
+.clear {
+    clear: both;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+}
+
+.west {
+    float: left;
+    width: 750px;
+    padding: 20px;
+    text-align: justify;
+}
+
+.west h1 {
+    font-size: 32px;
+    font-weight: 400;
+    color: #39a5f1;
+    margin-bottom: 20px;
+}
+
+.east {
+    float: left;
+    width: 170xp;
+    padding: 20px;
+}
