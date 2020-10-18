@@ -17,7 +17,7 @@ h1.logo {
     margin-bottom: 10px;
 }
 
-nav {
+#topnav {
     background-color: #1c74b2;
     text-align: center;
 }
@@ -244,6 +244,14 @@ h2 {
 
 .east {
     float: left;
-    width: 170xp;
+    width: 170px;
     padding: 20px;
+}
+
+.east ul {
+    padding-left: 20px;
+}
+
+.east ul>li {
+    margin-bottom: 5px;
 }
