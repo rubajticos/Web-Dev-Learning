@@ -1,0 +1,126 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #3e3e3e;
+    font-family: 'Roboto', sans-serif;
+}
+
+#container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    height: 100vh;
+}
+
+#main-header {
+    background-color: #4f4f4f;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    color: #bdbdbd;
+    font-style: italic;
+    padding: 20px;
+}
+
+#main-header h1 {
+    font-size: 3em;
+    text-align: center;
+    color: #fff;
+    font-style: normal;
+}
+
+a,
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff3838;
+}
+
+#content {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+
+.box {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}
+
+.todo-list {
+    min-height: 200px;
+    min-width: 150px;
+    max-width: 400px;
+    background-color: #f5f5f5;
+    border-radius: 20px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.todo-list ul {
+    padding: 0
+}
+
+.todo-list ul>li {
+    list-style: none;
+    padding: 10px 10px;
+    border-bottom: 1px solid #536bcf;
+}
+
+.todo-list ul>li::before {
+    font-family: "Font Awesome 5 Free";
+    content: "\f096";
+    padding-right: 10px;
+}
+
+.todo-list ul>li.checked {
+    text-decoration: line-through;
+}
+
+.todo-list ul>li.checked::before {
+    content: "\2611";
+}
+
+.todo-list button {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 5px;
+    background-color: #536bcf;
+    color: #fff;
+    align-self: flex-end;
+}
+
+.todo-list button:hover {
+    cursor: pointer;
+}
+
+.reminder-card {
+    font-family: 'Kalam', cursive;
+    max-width: 400px;
+    background-color: yellow;
+    border-radius: 20px;
+    padding: 30px;
+    font-size: 22px;
+    text-align: justify;
+}
+
+footer {
+    padding: 30px;
+    background-color: #4f4f4f;
+    color: #fff;
+    font-size: 1.2em;
+    text-align: center;
+    justify-content: flex-end;
+}
