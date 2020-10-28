@@ -18,10 +18,11 @@
             <h1>Mój organizer</h1>
             Dodawaj swoje listy z przypomnieniami i pamiątkowe zdjęcia... jak na lodówce :)
         </header>
-        <main>
+        <main class="site-content">
             <article>
                 <section id="content">
                     <div class="box todo-list">
+                        <span class="todo-list__title">Lorem ipsum dolor sit amet</span>
                         <ul>
                             <li class="checked">Mleko</li>
                             <li>Mąka</li>
@@ -32,45 +33,11 @@
                         </ul>
                         <button>+</button>
                     </div>
-                    <div class="box reminder-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien in sapien ultricies imperdiet ac nec libero.</p>
-                    </div>
-                    <div class="box reminder-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien in sapien ultricies imperdiet ac nec libero.</p>
-                    </div>
-                    <div class="box reminder-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-                    </div>
-                    <div class="box todo-list">
-                        <ul>
-                            <li class="checked">Mleko</li>
-                            <li>Mąka</li>
-                            <li>Jaja</li>
-                            <li>Woda</li>
-                            <li>Piwko</li>
-                            <li>Śledzik</li>
-                        </ul>
-                        <button>+</button>
-                    </div>
-                    <div class="box reminder-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien in sapien ultricies imperdiet ac nec libero.</p>
-                    </div>
-                    <div class="box todo-list">
-                        <ul>
-                            <li class="checked">Mleko</li>
-                            <li>Mąka</li>
-                            <li>Jaja</li>
-                            <li>Woda</li>
-                            <li>Piwko</li>
-                            <li>Śledzik</li>
-                        </ul>
-                        <button>+</button>
-                    </div>
-                    <div class="box reminder-card">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam ac sapien in sapien ultricies imperdiet ac nec libero.</p>
-                    </div>
-                    <div class="action-button">
-                        +
+
+                    <div class="action-button__container">
+                        <div class="action-button action-button__general always-visible">+</div>
+                        <div class="action-button action-button__todo hidden">+T</div>
+                        <div class="action-button action-button__reminder hidden">+R</div>
                     </div>
                 </section>
             </article>
