@@ -124,3 +124,24 @@ footer {
     text-align: center;
     justify-content: flex-end;
 }
+
+.action-button {
+    color: #fff;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    background-color: #536bcf;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2em;
+}
+
+.action-button:hover {
+    transform: scale(1.2);
+    transition-duration: 500ms;
+    cursor: pointer;
+}
