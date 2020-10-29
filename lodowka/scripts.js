@@ -55,9 +55,16 @@
         todoCard.classList.add('box', 'todo-list');
         todoCard.setAttribute('todo-id', todoList.id);
 
-        todoCard.innerHTML = `
-        <span class="todo-list__title">${todoList.title}</span>
-        <ul class="todo-list__items"></ul>`;
+        const todoTitle = document.createElement("span");
+        todoTitle.classList.add("todo-list__title");
+        todoTitle.innerHTML = todoList.title;
+        todoTitle.setAttribute("contenteditable", true);
+        todoTitle.addEventListener("focusout", updateTodoListTitle);
+        todoCard.append(todoTitle);
+
+        const todoListItemsNode = document.createElement("ul");
+        todoListItemsNode.classList.add("todo-list__items");
+        todoCard.append(todoListItemsNode);
 
         const addItemForm = document.createElement("form")
         addItemForm.classList.add('todo_list__addItem');
@@ -94,6 +101,18 @@
 
         todoLists.push(todoList);
         return todoCard;
+    }
+
+    function updateTodoListTitle(event) {
+        const newTitle = event.target.textContent.trim();
+        const todoListNode = event.target.parentElement;
+        const todoListId = todoListNode.getAttribute("todo-id");
+        const index = todoLists.findIndex(list => list.id === Number(todoListId));
+        const todoList = todoLists[index];
+
+        todoList.title = newTitle;
+
+        console.log(JSON.stringify(todoLists));
     }
 
     handleActionButtonsDisplaying();

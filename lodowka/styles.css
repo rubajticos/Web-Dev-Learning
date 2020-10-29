@@ -86,6 +86,13 @@ span.todo-list__title {
     font-weight: 700;
     align-self: flex-start;
     text-align: justify;
+    padding: 5px;
+}
+
+span.todo-list__title:focus {
+    border-radius: 10px;
+    outline: 0;
+    border: 2px solid #536bcf;
 }
 
 .todo-list ul>li {
