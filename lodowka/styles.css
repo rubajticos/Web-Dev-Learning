@@ -95,7 +95,7 @@ span.todo-list__title {
 }
 
 .todo-list ul>li::before {
-    font-family: "Font Awesome 5 Free";
+    font-family: "fontello";
     content: "\f096";
     padding-right: 10px;
 }
