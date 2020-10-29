@@ -116,7 +116,7 @@ span.todo-list__title:focus {
 }
 
 .todo_list__addItem {
-    align-self: flex-end;
+    align-self: center;
 }
 
 .todo_list__addItem--input {
