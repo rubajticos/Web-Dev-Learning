@@ -59,19 +59,22 @@
         <span class="todo-list__title">${todoList.title}</span>
         <ul class="todo-list__items"></ul>`;
 
-        const addItemButton = document.createElement("button")
-        addItemButton.classList.add('todo_list__addItem');
-        addItemButton.innerHTML = '+';
-        addItemButton.addEventListener("click", event => {
+        const addItemForm = document.createElement("form")
+        addItemForm.classList.add('todo_list__addItem');
+        addItemForm.innerHTML = '<input autofocus type="text" aria-label="Wprowadź nowy element listy" placeholder="Np. Kup mleko!" class="todo_list__addItem--input">';
+        addItemForm.addEventListener("submit", event => {
+            event.preventDefault();
             const todoListNode = event.target.parentElement;
             const todoListId = todoListNode.getAttribute("todo-id");
             const index = todoLists.findIndex(list => list.id === Number(todoListId));
             const todoList = todoLists[index];
+            const formInput = addItemForm.querySelector('.todo_list__addItem--input')
+            const newItemTxt = formInput.value.trim();
 
             const todoItem = {
                 id: Date.now(),
                 parentId: todoList.id,
-                text: "Item",
+                text: newItemTxt,
                 checked: false
             };
 
@@ -82,9 +85,12 @@
             const list = todoListNode.querySelector(".todo-list__items");
             list.appendChild(itemNode);
             todoList.items.push(todoItem);
-            console.log(JSON.stringify(todoLists));
+
+            formInput.value = '';
+            formInput.focus();
+
         });
-        todoCard.append(addItemButton);
+        todoCard.append(addItemForm);
 
         todoLists.push(todoList);
         return todoCard;
