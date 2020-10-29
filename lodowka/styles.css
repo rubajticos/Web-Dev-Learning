@@ -108,7 +108,7 @@ span.todo-list__title {
     content: "\2611";
 }
 
-.todo-list button {
+.todo_list__addItem {
     min-width: 30px;
     min-height: 30px;
     border-radius: 5px;
@@ -117,7 +117,7 @@ span.todo-list__title {
     align-self: flex-end;
 }
 
-.todo-list button:hover {
+.todo_list__addItem:hover {
     cursor: pointer;
 }
 

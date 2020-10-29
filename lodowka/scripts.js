@@ -1,5 +1,8 @@
 (function() {
 
+    let todoId = 0;
+    let todoLists = [];
+
     function handleActionButtonsDisplaying() {
         const generalActionButton = document.querySelector("div.action-button.action-button__general.always-visible");
         const actionButtonContainer = document.querySelector("div.action-button__container");
@@ -36,33 +39,57 @@
     function addTodoCard() {
         const actionButtonContainer = document.querySelector("#content");
         const todoCard = createTodoCard();
-        todoCard.classList.add('box', 'todo-list');
 
         actionButtonContainer.appendChild(todoCard);
         console.log(todoCard);
     }
 
     function createTodoCard() {
+        const todoList = {
+            id: todoId++,
+            title: 'TO-DO',
+            items: []
+        };
+
         const todoCard = document.createElement("div");
         todoCard.classList.add('box', 'todo-list');
+        todoCard.setAttribute('todo-id', todoList.id);
 
-        const cardTitle = document.createElement("span");
-        cardTitle.classList.add("todo-list__title");
-        cardTitle.innerHTML = "Title"
+        todoCard.innerHTML = `
+        <span class="todo-list__title">${todoList.title}</span>
+        <ul class="todo-list__items"></ul>`;
 
-        const itemsList = document.createElement("ul");
+        const addItemButton = document.createElement("button")
+        addItemButton.classList.add('todo_list__addItem');
+        addItemButton.innerHTML = '+';
+        addItemButton.addEventListener("click", event => {
+            const todoListNode = event.target.parentElement;
+            const todoListId = todoListNode.getAttribute("todo-id");
+            const index = todoLists.findIndex(list => list.id === Number(todoListId));
+            const todoList = todoLists[index];
 
-        const newItemButton = document.createElement("button");
-        newItemButton.innerHTML = "+";
+            const todoItem = {
+                id: Date.now(),
+                parentId: todoList.id,
+                text: "Item",
+                checked: false
+            };
 
-        todoCard.appendChild(cardTitle);
-        todoCard.appendChild(itemsList);
-        todoCard.appendChild(newItemButton);
+            const itemNode = document.createElement("li");
+            itemNode.innerHTML = todoItem.text;
+            itemNode.setAttribute('todo-item-id', todoItem.id);
 
+            const list = todoListNode.querySelector(".todo-list__items");
+            list.appendChild(itemNode);
+            todoList.items.push(todoItem);
+            console.log(JSON.stringify(todoLists));
+        });
+        todoCard.append(addItemButton);
+
+        todoLists.push(todoList);
         return todoCard;
     }
 
     handleActionButtonsDisplaying();
     setAddTodoButton();
-
 })();
