@@ -109,12 +109,20 @@ span.todo-list__title {
 }
 
 .todo_list__addItem {
-    min-width: 30px;
-    min-height: 30px;
-    border-radius: 5px;
-    background-color: #536bcf;
-    color: #fff;
     align-self: flex-end;
+}
+
+.todo_list__addItem--input {
+    font-size: 1.1em;
+    color: #000000;
+    border: 2px solid #536bcf;
+    border-radius: 10px;
+    padding: 10px 15px;
+}
+
+.todo_list__addItem--input:focus {
+    border: 2px solid #3e3e3e;
+    outline: 0;
 }
 
 .todo_list__addItem:hover {
