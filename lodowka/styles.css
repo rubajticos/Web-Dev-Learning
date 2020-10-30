@@ -101,7 +101,7 @@ span.todo-list__title:focus {
   border-bottom: 1px solid #536bcf;
 }
 
-.todo-list ul > li.checked {
+.todo-list__item--checked {
   text-decoration: line-through;
 }
 

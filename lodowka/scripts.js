@@ -179,14 +179,14 @@
     console.log(checkedIcon);
     if (todoItem.checked === false) {
       todoItem.checked = true;
-      itemNode.classList.add("checked");
+      itemNode.classList.add("todo-list__item--checked");
       if (checkedIcon.classList.contains("icon-check-empty")) {
         checkedIcon.classList.remove("icon-check-empty");
         checkedIcon.classList.add("icon-check");
       }
     } else {
       todoItem.checked = false;
-      itemNode.classList.remove("checked");
+      itemNode.classList.remove("todo-list__item--checked");
       if (checkedIcon.classList.contains("icon-check")) {
         checkedIcon.classList.remove("icon-check");
         checkedIcon.classList.add("icon-check-empty");
