@@ -101,18 +101,8 @@ span.todo-list__title:focus {
   border-bottom: 1px solid #536bcf;
 }
 
-.todo-list ul > li::before {
-  font-family: "fontello";
-  content: "\f096";
-  padding-right: 10px;
-}
-
 .todo-list ul > li.checked {
   text-decoration: line-through;
-}
-
-.todo-list ul > li.checked::before {
-  content: "\2611";
 }
 
 .todo_list__addItem {
