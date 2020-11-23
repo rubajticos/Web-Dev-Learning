@@ -16,21 +16,21 @@ import { RecipeStartComponent } from './component/recipes/recipe-start/recipe-st
 import { RecipeEditComponent } from './component/recipes/recipe-edit/recipe-edit.component';
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        HeaderComponent,
-        RecipesComponent,
-        RecipeListComponent,
-        RecipeDetailComponent,
-        RecipeItemComponent,
-        ShoppingListComponent,
-        ShoppingEditComponent,
-        DropdownDirective,
-        RecipeStartComponent,
-        RecipeEditComponent,
-    ],
-    imports: [BrowserModule, FormsModule, AppRoutingModule],
-    providers: [],
-    bootstrap: [AppComponent],
+  declarations: [
+    AppComponent,
+    HeaderComponent,
+    RecipesComponent,
+    RecipeListComponent,
+    RecipeDetailComponent,
+    RecipeItemComponent,
+    ShoppingListComponent,
+    ShoppingEditComponent,
+    DropdownDirective,
+    RecipeStartComponent,
+    RecipeEditComponent,
+  ],
+  imports: [BrowserModule, FormsModule, AppRoutingModule],
+  providers: [],
+  bootstrap: [AppComponent],
 })
 export class AppModule {}
