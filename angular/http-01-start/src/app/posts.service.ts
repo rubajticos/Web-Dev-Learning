@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, throwError } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
@@ -25,21 +25,25 @@ export class PostsService {
   }
 
   fetchPosts() {
-    return this.http.get<{ [key: string]: Post }>('https://ng-complete-guide-d6c42.firebaseio.com/posts.json').pipe(
-      map((responseData) => {
-        const postArray: Post[] = [];
-        for (const key in responseData) {
-          if (responseData.hasOwnProperty(key)) {
-            postArray.push({ ...responseData[key], id: key });
-          }
-        }
-        return postArray;
-      }),
-      catchError((errorRes) => {
-        //Send to analytics server
-        return throwError(errorRes);
+    return this.http
+      .get<{ [key: string]: Post }>('https://ng-complete-guide-d6c42.firebaseio.com/posts.json', {
+        headers: new HttpHeaders({ 'Custom-Header': 'Hello' }),
       })
-    );
+      .pipe(
+        map((responseData) => {
+          const postArray: Post[] = [];
+          for (const key in responseData) {
+            if (responseData.hasOwnProperty(key)) {
+              postArray.push({ ...responseData[key], id: key });
+            }
+          }
+          return postArray;
+        }),
+        catchError((errorRes) => {
+          //Send to analytics server
+          return throwError(errorRes);
+        })
+      );
   }
 
   deletePosts() {
