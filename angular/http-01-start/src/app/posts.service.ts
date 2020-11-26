@@ -19,22 +19,16 @@ export class PostsService {
   }
 
   fetchPosts() {
-    this.http
-      .get<{ [key: string]: Post }>('https://ng-complete-guide-d6c42.firebaseio.com/posts.json')
-      .pipe(
-        map((responseData) => {
-          const postArray: Post[] = [];
-          for (const key in responseData) {
-            if (responseData.hasOwnProperty(key)) {
-              postArray.push({ ...responseData[key], id: key });
-            }
+    return this.http.get<{ [key: string]: Post }>('https://ng-complete-guide-d6c42.firebaseio.com/posts.json').pipe(
+      map((responseData) => {
+        const postArray: Post[] = [];
+        for (const key in responseData) {
+          if (responseData.hasOwnProperty(key)) {
+            postArray.push({ ...responseData[key], id: key });
           }
-          return postArray;
-        })
-      )
-      .subscribe((posts) => {
-        console.log(posts);
-      });
-  }
+        }
+        return postArray;
+      })
+    );
   }
 }
