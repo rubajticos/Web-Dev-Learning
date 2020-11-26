@@ -25,10 +25,14 @@ export class PostsService {
   }
 
   fetchPosts() {
+    let searchParams = new HttpParams();
+    searchParams = searchParams.append('print', 'pretty');
+    searchParams = searchParams.append('custom', 'key');
+
     return this.http
       .get<{ [key: string]: Post }>('https://ng-complete-guide-d6c42.firebaseio.com/posts.json', {
         headers: new HttpHeaders({ 'Custom-Header': 'Hello' }),
-        params: new HttpParams().set('print', 'pretty'),
+        params: searchParams,
       })
       .pipe(
         map((responseData) => {
