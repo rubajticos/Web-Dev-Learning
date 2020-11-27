@@ -1,7 +1,7 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpEventType, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Subject, throwError } from 'rxjs';
-import { catchError, map } from 'rxjs/operators';
+import { catchError, map, tap } from 'rxjs/operators';
 import { Post } from './post.model';
 
 @Injectable({
@@ -14,14 +14,18 @@ export class PostsService {
 
   createAndStorePost(title: string, content: string) {
     const postData: Post = { title: title, content: content };
-    this.http.post<{ name: string }>('https://ng-complete-guide-d6c42.firebaseio.com/posts.json', postData).subscribe(
-      (responseData) => {
-        console.log(responseData);
-      },
-      (error) => {
-        this.error.next(error.message);
-      }
-    );
+    this.http
+      .post<{ name: string }>('https://ng-complete-guide-d6c42.firebaseio.com/posts.json', postData, {
+        observe: 'response',
+      })
+      .subscribe(
+        (responseData) => {
+          console.log(responseData);
+        },
+        (error) => {
+          this.error.next(error.message);
+        }
+      );
   }
 
   fetchPosts() {
@@ -52,6 +56,20 @@ export class PostsService {
   }
 
   deletePosts() {
-    return this.http.delete('https://ng-complete-guide-d6c42.firebaseio.com/posts.json');
+    return this.http
+      .delete('https://ng-complete-guide-d6c42.firebaseio.com/posts.json', {
+        observe: 'events',
+      })
+      .pipe(
+        tap((event) => {
+          if (event.type === HttpEventType.Sent) {
+            console.log('DeletePosts request sent');
+          }
+          if (event.type === HttpEventType.Response) {
+            console.log('DeletePosts response!');
+            console.log(event.body);
+          }
+        })
+      );
   }
 }
