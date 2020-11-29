@@ -15,4 +15,10 @@ export class DataStorageService {
       .put('https://angularcourse-recipe-book.firebaseio.com/recipes.json', recipes)
       .subscribe((response) => console.log(response));
   }
+
+  fetchRecipes() {
+    this.http.get<Recipe[]>('https://angularcourse-recipe-book.firebaseio.com/recipes.json').subscribe((recipes) => {
+      this.recipeService.setRecipes(recipes);
+    });
+  }
 }
