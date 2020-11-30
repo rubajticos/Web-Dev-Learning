@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { format } from 'path';
+import { error } from 'protractor';
 import { AuthService } from './auth.service';
 
 @Component({
@@ -25,7 +27,27 @@ export class AuthComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.authForm.value);
+    if (!this.authForm.valid) {
+      return;
+    }
+
+    const email = this.authForm.value.email;
+    const password = this.authForm.value.password;
+
+    if (this.isLoginMode) {
+      // ...
+    } else {
+      this.authService.signup(email, password).subscribe(
+        (resData) => {
+          console.log(resData);
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+    }
+
+    this.authForm.reset();
   }
   onSwitchMode() {
     this.isLoginMode = !this.isLoginMode;
