@@ -42,5 +42,6 @@ import { PlaceholderDirective } from './shared/placeholder/placeholder.directive
   imports: [BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule, HttpClientModule],
   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthInterceptorService, multi: true }],
   bootstrap: [AppComponent],
+  entryComponents: [AlertComponent],
 })
 export class AppModule {}
