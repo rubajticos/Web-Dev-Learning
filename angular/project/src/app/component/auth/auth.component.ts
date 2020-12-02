@@ -1,8 +1,9 @@
-import { Component, ComponentFactoryResolver, OnInit } from '@angular/core';
+import { Component, ComponentFactoryResolver, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { AlertComponent } from 'src/app/shared/alert/alert.component';
+import { PlaceholderDirective } from 'src/app/shared/placeholder/placeholder.directive';
 import { AuthResponseData, AuthService } from './auth.service';
 
 @Component({
@@ -15,6 +16,7 @@ export class AuthComponent implements OnInit {
   isLoginMode = true;
   isLoading = false;
   error: string = null;
+  @ViewChild(PlaceholderDirective) alertHost: PlaceholderDirective;
 
   constructor(
     private authService: AuthService,
@@ -76,6 +78,9 @@ export class AuthComponent implements OnInit {
   private showError(message: string) {
     // const alertCmp = new AlertComponent() // -> not working
     const alertCmpFactory = this.componentFactoryResolver.resolveComponentFactory(AlertComponent);
-    alertCmpFactory.create;
+    const hostViewContainerRef = this.alertHost.viewContainerRef;
+    hostViewContainerRef.clear();
+
+    hostViewContainerRef.createComponent(alertCmpFactory);
   }
 }
