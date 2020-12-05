@@ -6,7 +6,6 @@ import { HeaderComponent } from './component/header/header.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './shared/alert/alert.component';
-import { RecipesModule } from './component/recipes/recipes.module';
 import { ShoppingListModule } from './component/shopping-list/shopping-list.module';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './component/core.module';
@@ -18,7 +17,6 @@ import { AuthModule } from './component/auth/auth.module';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    RecipesModule,
     ShoppingListModule,
     SharedModule,
     CoreModule,
