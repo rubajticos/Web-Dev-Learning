@@ -8,7 +8,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './shared/alert/alert.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './component/core.module';
-import { AuthModule } from './component/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
