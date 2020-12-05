@@ -8,11 +8,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './shared/alert/alert.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './component/core.module';
+import { LoggingService } from './component/logging.service';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule, SharedModule, CoreModule],
   bootstrap: [AppComponent],
   entryComponents: [AlertComponent],
+  providers: [LoggingService],
 })
 export class AppModule {}
