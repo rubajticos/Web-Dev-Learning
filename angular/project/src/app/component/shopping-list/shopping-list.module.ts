@@ -10,6 +10,6 @@ import { ShoppingListComponent } from './shopping-list.component';
   declarations: [ShoppingListComponent, ShoppingEditComponent],
   imports: [SharedModule, FormsModule, RouterModule.forChild([{ path: '', component: ShoppingListComponent }])],
   exports: [ShoppingListComponent, ShoppingEditComponent],
-  providers: [LoggingService],
+  // providers: [LoggingService],
 })
 export class ShoppingListModule {}
