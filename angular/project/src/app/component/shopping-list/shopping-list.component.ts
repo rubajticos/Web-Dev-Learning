@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { LoggingService } from '../logging.service';
 import { ShoppingListService } from './shopping-list.service';
+import * as fromShoppingList from '../shopping-list/store/shopping-list.reducer';
 
 @Component({
   selector: 'app-shopping-list',
@@ -18,7 +19,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   constructor(
     private slService: ShoppingListService,
     private loggingService: LoggingService,
-    private store: Store<{ shoppingList: { ingredients: Ingredient[] } }>
+    private store: Store<fromShoppingList.AppState>
   ) {}
 
   ngOnInit(): void {
