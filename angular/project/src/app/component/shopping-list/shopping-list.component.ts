@@ -5,6 +5,7 @@ import { Observable } from 'rxjs/internal/Observable';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import { LoggingService } from '../logging.service';
 import { ShoppingListService } from './shopping-list.service';
+import * as ShoppingListActions from '../shopping-list/store/shopping-list.actions';
 import * as fromShoppingList from '../shopping-list/store/shopping-list.reducer';
 
 @Component({
@@ -36,6 +37,7 @@ export class ShoppingListComponent implements OnInit, OnDestroy {
   }
 
   onEditItem(index: number) {
-    this.slService.startingEditing.next(index);
+    // this.slService.startingEditing.next(index);
+    this.store.dispatch(new ShoppingListActions.StartEdit(index));
   }
 }
