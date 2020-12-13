@@ -8,9 +8,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { AlertComponent } from './shared/alert/alert.component';
 import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './component/core.module';
-import { LoggingService } from './component/logging.service';
 import { StoreModule } from '@ngrx/store';
-import { shoppingListReducer } from './component/shopping-list/store/shopping-list.reducer';
+import * as fromApp from './component/store/app.reducer';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -18,7 +17,7 @@ import { shoppingListReducer } from './component/shopping-list/store/shopping-li
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    StoreModule.forRoot({ shoppingList: shoppingListReducer }),
+    StoreModule.forRoot(fromApp.appReducer),
     SharedModule,
     CoreModule,
   ],
