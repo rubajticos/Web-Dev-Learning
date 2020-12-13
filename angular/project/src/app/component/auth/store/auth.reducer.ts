@@ -11,6 +11,7 @@ const initialState = {
 };
 
 export function authReducer(state = initialState, action: AuthActions.AuthActions) {
+  console.log(state);
   switch (action.type) {
     case AuthActions.LOGIN:
       const user = new User(
@@ -33,3 +34,13 @@ export function authReducer(state = initialState, action: AuthActions.AuthAction
       return state;
   }
 }
+
+/*
+
+1) Default case is absolutelty required because each state reducer is fired
+when some action dispatched.
+Reducer have to return current state in this situaction when not recognize action.
+
+2)  Prefixes are helpful to provide unique action codes.
+
+*/
