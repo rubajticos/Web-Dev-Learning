@@ -1,4 +1,3 @@
-import { Action } from '@ngrx/store';
 import { Ingredient } from 'src/app/shared/ingredient.model';
 import * as ShoppingListActions from './shopping-list.actions';
 
@@ -59,8 +58,8 @@ export function shoppingListReducer(state: State = initialState, action: Shoppin
     case ShoppingListActions.STOP_EDIT:
       return {
         ...state,
-        editedIngredientIndex: null,
-        editedIngredient: -1,
+        editedIngredient: null,
+        editedIngredientIndex: -1,
       };
     default:
       return state;
