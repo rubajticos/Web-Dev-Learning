@@ -10,6 +10,8 @@ import { SharedModule } from './shared/shared.module';
 import { CoreModule } from './component/core.module';
 import { StoreModule } from '@ngrx/store';
 import * as fromApp from './component/store/app.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { AuthEffects } from './component/auth/store/auth.effects';
 
 @NgModule({
   declarations: [AppComponent, HeaderComponent],
@@ -18,6 +20,7 @@ import * as fromApp from './component/store/app.reducer';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot(fromApp.appReducer),
+    EffectsModule.forRoot([AuthEffects]),
     SharedModule,
     CoreModule,
   ],
