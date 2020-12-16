@@ -6,7 +6,13 @@ import { Component } from '@angular/core';
   templateUrl: './app.component.html',
   animations: [
     trigger('divState', [
-      state('normal', style({ 'background-color': 'red', transform: 'translateX(0)' })),
+      state(
+        'normal',
+        style({
+          'background-color': 'red',
+          transform: 'translateX(0)',
+        })
+      ),
       state(
         'highlighted',
         style({
@@ -15,10 +21,16 @@ import { Component } from '@angular/core';
         })
       ),
       transition('normal <=> highlighted', animate(300)),
-      // transition('highlighted => normal', animate(800)),
+      // transition('highlighted => normal', animate(800))
     ]),
     trigger('wildState', [
-      state('normal', style({ 'background-color': 'red', transform: 'translateX(0) scale(1)' })),
+      state(
+        'normal',
+        style({
+          'background-color': 'red',
+          transform: 'translateX(0) scale(1)',
+        })
+      ),
       state(
         'highlighted',
         style({
@@ -35,7 +47,18 @@ import { Component } from '@angular/core';
       ),
       transition('normal => highlighted', animate(300)),
       transition('highlighted => normal', animate(800)),
-      transition('shrunken <=> *', animate(500)),
+      transition('shrunken <=> *', [
+        style({
+          'background-color': 'orange',
+        }),
+        animate(
+          1000,
+          style({
+            borderRadius: '50px',
+          })
+        ),
+        animate(500),
+      ]),
     ]),
   ],
 })
