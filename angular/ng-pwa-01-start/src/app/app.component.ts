@@ -19,3 +19,8 @@ export class AppComponent implements OnInit {
       .subscribe((fetchedPosts) => (this.posts = fetchedPosts));
   }
 }
+
+/*
+Official Angular Service Worker Docs: https://angular.io/guide/service-worker-intro
+Academind Resources on PWAs: https://academind.com/learn/progressive-web-apps
+*/
