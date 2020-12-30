@@ -7,3 +7,5 @@ Updating dependencies: ng update
 Angular Material: ng add @angular/material
 https://material.angular.io/guide/schematics
 Schematics -> example with nav: ng generate @angular/material:navigation <component-name>
+
+https://angular.io/guide/deployment
