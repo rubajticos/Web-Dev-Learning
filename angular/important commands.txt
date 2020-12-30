@@ -4,3 +4,5 @@ ng lint
 ng build --prod
 
 Angular Material: ng add @angular/material
+https://material.angular.io/guide/schematics
+Schematics -> example with nav: ng generate @angular/material:navigation <component-name>
