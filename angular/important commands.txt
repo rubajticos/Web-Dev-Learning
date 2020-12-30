@@ -1,0 +1,5 @@
+ng serve
+ng generate
+ng lint
+ng build --prod
+
