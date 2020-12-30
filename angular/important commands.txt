@@ -2,6 +2,7 @@ ng serve
 ng generate
 ng lint
 ng build --prod
+Updating dependencies: ng update
 
 Angular Material: ng add @angular/material
 https://material.angular.io/guide/schematics
