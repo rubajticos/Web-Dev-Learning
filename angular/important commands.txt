@@ -3,9 +3,12 @@ ng generate
 ng lint
 ng build --prod
 Updating dependencies: ng update
+Creating library: ng generate library <xxx>
 
 Angular Material: ng add @angular/material
 https://material.angular.io/guide/schematics
 Schematics -> example with nav: ng generate @angular/material:navigation <component-name>
 
 https://angular.io/guide/deployment
+https://angular.io/guide/creating-libraries
+
