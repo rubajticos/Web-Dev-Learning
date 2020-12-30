@@ -3,3 +3,4 @@ ng generate
 ng lint
 ng build --prod
 
+Angular Material: ng add @angular/material
