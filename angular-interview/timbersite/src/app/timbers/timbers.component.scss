@@ -1,0 +1,13 @@
+table {
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: #000000 1px solid;
+}
+
+thead > tr > th {
+  background-color: #4f4f4f;
+  color: yellow;
+}

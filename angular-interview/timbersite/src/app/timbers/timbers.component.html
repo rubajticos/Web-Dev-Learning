@@ -1,0 +1,32 @@
+<p>showing timbers...</p>
+
+<input
+  type="text"
+  name="newMultiplier"
+  id="newMultiplier"
+  [(ngModel)]="newMultiplier"
+/>
+<button (click)="onMultiplierAccept()">Accept Multipler</button>
+
+<br /><br />
+
+<table>
+  <thead>
+    <tr>
+      <th>prodId</th>
+      <th>prodName</th>
+      <th>category</th>
+      <th>prodLength</th>
+      <th>multiplied</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let timber of getRoughCutTimbers(); let i = index">
+      <td>{{ timber.prodId }}</td>
+      <td>{{ timber.prodName }}</td>
+      <td>{{ timber.category }}</td>
+      <td>{{ timber.prodLength }}</td>
+      <td>{{ getTimberLengthMultiplied(timber) }}</td>
+    </tr>
+  </tbody>
+</table>
