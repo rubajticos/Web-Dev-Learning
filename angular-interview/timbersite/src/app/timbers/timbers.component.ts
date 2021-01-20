@@ -34,16 +34,23 @@ export class TimbersComponent implements OnInit {
       }
     ]`;
 
+  timbers: Timber[] = [];
+
+  multiplier: number = 10;
+  newMultiplier: number = this.multiplier;
+
   constructor() {}
 
-  ngOnInit(): void {}
-
-  getTimbers(): Timber[] {
-    return JSON.parse(this.productsJson);
+  ngOnInit(): void {
+    this.getTimbers();
   }
 
-  getRoughCutTimbers(): Timber[] {
-    return this.getTimbers().filter((v) => v.category === 'roughcut');
+  getTimbers() {
+    this.timbers = JSON.parse(this.productsJson);
+  }
+
+  getRoughCutTimbers() {
+    return this.timbers.filter((v) => v.category === 'roughcut');
   }
 
   getTimberLength(timber: Timber): number {
@@ -52,6 +59,10 @@ export class TimbersComponent implements OnInit {
   }
 
   getTimberLengthMultiplied(timber: Timber) {
-    return this.getTimberLength(timber) * 10;
+    return this.getTimberLength(timber) * this.multiplier;
+  }
+
+  onMultiplierAccept() {
+    this.multiplier = this.newMultiplier;
   }
 }
