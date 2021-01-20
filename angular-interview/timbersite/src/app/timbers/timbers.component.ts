@@ -41,4 +41,8 @@ export class TimbersComponent implements OnInit {
   getTimbers(): Timber[] {
     return JSON.parse(this.productsJson);
   }
+
+  getRoughCutTimbers(): Timber[] {
+    return this.getTimbers().filter((v) => v.category === 'roughcut');
+  }
 }
