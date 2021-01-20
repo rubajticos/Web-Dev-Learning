@@ -36,7 +36,9 @@ export class TimbersComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit(): void {
-    let timbers: Timber[] = JSON.parse(this.productsJson);
+  ngOnInit(): void {}
+
+  getTimbers(): Timber[] {
+    return JSON.parse(this.productsJson);
   }
 }

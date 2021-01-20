@@ -1,1 +1,19 @@
 <p>showing timbers...</p>
+<table>
+  <thead>
+    <tr>
+      <th>prodId</th>
+      <th>prodName</th>
+      <th>category</th>
+      <th>prodLength</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let timber of getTimbers(); let i = index">
+      <td>{{ timber.prodId }}</td>
+      <td>{{ timber.prodName }}</td>
+      <td>{{ timber.category }}</td>
+      <td>{{ timber.prodLength }}</td>
+    </tr>
+  </tbody>
+</table>
