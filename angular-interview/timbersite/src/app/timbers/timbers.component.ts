@@ -45,4 +45,13 @@ export class TimbersComponent implements OnInit {
   getRoughCutTimbers(): Timber[] {
     return this.getTimbers().filter((v) => v.category === 'roughcut');
   }
+
+  getTimberLength(timber: Timber): number {
+    let timberLength: number = +timber.prodLength.replace('m', '');
+    return timberLength;
+  }
+
+  getTimberLengthMultiplied(timber: Timber) {
+    return this.getTimberLength(timber) * 10;
+  }
 }
